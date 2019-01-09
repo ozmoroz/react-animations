@@ -7,14 +7,13 @@ body {
   text-align: center;
 }
 
-.search-form {
+.drawer-form {
   margin: 0 auto;
   display: flex;
-  height: 2rem;
-  width: 30%;
+  justify-content: flex-end;
 }
 
-.search-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+.form__input {
+  flex: 1 1 auto;
+  border: 1px solid black;
 }
