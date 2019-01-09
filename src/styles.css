@@ -1,4 +1,20 @@
+body {
+  font-size: 16px;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.search-form {
+  margin: 0 auto;
+  display: flex;
+  height: 2rem;
+  width: 30%;
+}
+
+.search-icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
