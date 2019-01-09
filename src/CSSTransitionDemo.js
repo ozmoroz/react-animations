@@ -18,7 +18,7 @@ const openingStyle = {
 const closingStyle = {
   maxWidth: 0 /* max-width is 0 in the closed drawer */,
   opacity: 0 /* closed drawer is transparent */,
-  /* Upon transitioning Closed to Open,
+  /* Upon transitioning to Closed,
      animate `max-width' for 0.5s
      and 'opacity' for 0.2s  with 0.3s delay */
   transition: 'max-width 0.5s, opacity 0.2s 0.3s'
@@ -31,7 +31,7 @@ class Search extends React.Component {
 
   toggleOpened = () =>
     // Toggle opened / closed state.
-    // Because we rely on the previous state, we need to use a function setState form
+    // Because we rely on the previous state, we need to use a functional setState form
     // https://ozmoroz.com/2018/11/why-my-setstate-doesnt-work/
     this.setState(state => ({ ...state, opened: !state.opened }));
 
