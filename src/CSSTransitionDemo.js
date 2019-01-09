@@ -41,8 +41,6 @@ class Search extends React.Component {
       <div className="drawer-form col-12 col-md-4">
         <input
           type="text"
-          // 'form__input' class defined in the CSS file
-          // applies 'transition' CSS property
           className="form__input"
           // Apply 'openingStyle' CSS class if the drawer is opened,
           // and 'closingStyle' if the drawer is closed.
