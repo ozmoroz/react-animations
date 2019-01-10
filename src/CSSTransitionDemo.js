@@ -4,7 +4,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 // import './styles.css';
 
-/* This CSS style is applied when the drawer is opening and opened*/
+/* This CSS style is applied when the drawer is opening and opened */
 const openingStyle = {
   maxWidth: '100%' /* max-with is 100% when the drawer is opened */,
   opacity: 1 /* opened drawer is opaque */,
