@@ -7,7 +7,7 @@ import './styles.css';
 function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
+      <h1>Animations in React</h1>
       <h2>CSS Transition demo</h2>
       <p>
         Animate CSS <code>max-width</code> and <code>opacity</code> properties

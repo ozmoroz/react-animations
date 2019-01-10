@@ -1,8 +1,6 @@
 // CSS Transitions demo
 
 import * as React from 'react';
-import ReactDOM from 'react-dom';
-// import './styles.css';
 
 /* This CSS style is applied when the drawer is opening and opened */
 const openingStyle = {
