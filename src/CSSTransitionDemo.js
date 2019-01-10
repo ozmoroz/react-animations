@@ -3,7 +3,7 @@
 import * as React from 'react';
 
 /* This CSS style is applied when the drawer is opening and opened */
-const openingStyle = {
+const openedStyle = {
   maxWidth: '100%' /* max-with is 100% when the drawer is opened */,
   opacity: 1 /* opened drawer is opaque */,
   /* Upon transitioning to Open,
@@ -13,7 +13,7 @@ const openingStyle = {
 };
 
 /* This CSS style is applied when the drawer is closing and closed */
-const closingStyle = {
+const closedStyle = {
   maxWidth: 0 /* max-width is 0 in the closed drawer */,
   opacity: 0 /* closed drawer is transparent */,
   /* Upon transitioning to Closed,
@@ -40,9 +40,9 @@ class Search extends React.Component {
         <input
           type="text"
           className="form__input"
-          // Apply 'openingStyle' CSS class if the drawer is opened,
-          // and 'closingStyle' if the drawer is closed.
-          style={opened ? openingStyle : closingStyle}
+          // Apply 'openedStyle' CSS class if the drawer is opened,
+          // and 'closedStyle' if the drawer is closed.
+          style={opened ? openedStyle : closedStyle}
         />
         <button
           type="button"
