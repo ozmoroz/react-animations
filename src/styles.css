@@ -7,13 +7,13 @@ body {
   text-align: center;
 }
 
-.drawer-form {
+.drawer-container {
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
 }
 
-.form__input {
+.drawer {
   flex: 1 1 auto;
   border: 1px solid black;
 }

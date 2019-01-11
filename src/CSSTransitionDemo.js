@@ -22,7 +22,7 @@ const closedStyle = {
   transition: 'max-width 0.5s, opacity 0.2s 0.3s'
 };
 
-class Search extends React.Component {
+class Drawer extends React.Component {
   state = {
     opened: false // Initially search form is Closed
   };
@@ -36,17 +36,17 @@ class Search extends React.Component {
   render() {
     const { opened } = this.state;
     return (
-      <div className="drawer-form col-12 col-md-4">
+      <div className="drawer-container col-12 col-md-4">
         <input
           type="text"
-          className="form__input"
+          className="drawer"
           // Apply 'openedStyle' CSS class if the drawer is opened,
           // and 'closedStyle' if the drawer is closed.
           style={opened ? openedStyle : closedStyle}
         />
         <button
           type="button"
-          className="form__button btn btn-primary"
+          className="open-close-button btn btn-primary"
           onClick={this.toggleOpened}
         >
           {opened ? 'Close' : 'Open'}
@@ -56,4 +56,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default Drawer;
