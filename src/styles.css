@@ -16,4 +16,5 @@ body {
 .drawer {
   flex: 1 1 auto;
   border: 1px solid black;
+  transition: max-width 0.5s;
 }
