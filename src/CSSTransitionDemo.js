@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-/* This CSS style is applied when the drawer is opening and opened */
+/* This CSS style is applied when the drawer is opened */
 const openedStyle = {
   maxWidth: '100%' /* max-with is 100% when the drawer is opened */,
   /* Upon transitioning to Open,
@@ -10,7 +10,7 @@ const openedStyle = {
   transition: 'max-width 0.5s'
 };
 
-/* This CSS style is applied when the drawer is closing and closed */
+/* This CSS style is applied when the drawer is closed */
 const closedStyle = {
   maxWidth: 0 /* max-width is 0 in the closed drawer */,
   /* Upon transitioning to Closed,
