@@ -5,17 +5,19 @@ import * as React from 'react';
 /* This CSS style is applied when the drawer is opened */
 const openedStyle = {
   maxWidth: '100%' /* max-with is 100% when the drawer is opened */,
+  opacity: 1 /* opened drawer is opaque */,
   /* Upon transitioning to Open,
-     animate `max-width' for 0.5sv*/
-  transition: 'max-width 0.5s'
+     animate `max-width' for 0.5s and opacity for 0.2s */
+  transition: 'max-width 0.5s, opacity 0.2s'
 };
 
 /* This CSS style is applied when the drawer is closed */
 const closedStyle = {
   maxWidth: 0 /* max-width is 0 in the closed drawer */,
+  opacity: 0 /* closed drawer is transparent */,
   /* Upon transitioning to Closed,
-     animate `max-width' for 0.5s */
-  transition: 'max-width 0.5s'
+     animate `max-width' for 0.5s and opacity for 0.2s */
+  transition: 'max-width 0.5s, opacity 0.2s'
 };
 
 class Drawer extends React.Component {
