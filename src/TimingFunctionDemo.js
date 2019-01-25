@@ -3,7 +3,7 @@
 import * as React from 'react';
 
 const duration = '4s';
-const timingFunctions = ['ease', 'linear'];
+const timingFunctions = ['linear', 'ease', 'ease-in-out'];
 
 const Drawer = props => {
   const { opened, duration, timingFunction } = props;
@@ -26,14 +26,17 @@ const Drawer = props => {
     transition: `max-width ${duration} ${timingFunction}`
   };
   return (
-    <div>
-      <input
-        type="text"
-        className="drawer"
-        // Apply 'openedStyle' CSS class if the drawer is opened,
-        // and 'closedStyle' if the drawer is closed.
-        style={opened ? openedStyle : closedStyle}
-      />
+    <div className="row">
+      <div className="col-12 col-md-2 d-flex">{timingFunction}</div>
+      <div className="col-12 col-md-10 d-flex mb-1">
+        <input
+          type="text"
+          className="drawer"
+          // Apply 'openedStyle' CSS class if the drawer is opened,
+          // and 'closedStyle' if the drawer is closed.
+          style={opened ? openedStyle : closedStyle}
+        />
+      </div>
     </div>
   );
 };
@@ -52,14 +55,18 @@ class TimingFunctionDemo extends React.Component {
   render() {
     const { opened } = this.state;
     return (
-      <div className="drawer-container col-12 col-md-4">
-        <button
-          type="button"
-          className="open-close-button btn btn-primary"
-          onClick={this.toggleOpened}
-        >
-          {opened ? 'Close' : 'Open'}
-        </button>
+      <>
+        <div className="row mb-3">
+          <div className="col">
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={this.toggleOpened}
+            >
+              {opened ? 'Close' : 'Open'}
+            </button>
+          </div>
+        </div>
         {timingFunctions.map(timingFunction => (
           <Drawer
             key={timingFunction}
@@ -68,7 +75,7 @@ class TimingFunctionDemo extends React.Component {
             timingFunction={timingFunction}
           />
         ))}
-      </div>
+      </>
     );
   }
 }
