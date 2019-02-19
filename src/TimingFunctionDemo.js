@@ -1,9 +1,9 @@
 // CSS Transitions demo
 
-import * as React from 'react';
+// TODO: Try to animate flex-basis property instead of max-width
 
-const duration = '4s';
-const timingFunctions = ['linear', 'ease', 'ease-in-out'];
+import * as React from 'react';
+import Textarea from 'react-textarea-autosize';
 
 const Drawer = props => {
   const { opened, duration, timingFunction } = props;
@@ -43,7 +43,25 @@ const Drawer = props => {
 
 class TimingFunctionDemo extends React.Component {
   state = {
-    opened: false // Initially search form is Closed
+    opened: false, // Initially search form is Closed
+    timingFunctions: [
+      'linear',
+      'ease',
+      'ease-in-out',
+      'cubic-bezier(0.4, 1, 0.6, 5)'
+    ],
+    duration: '4s'
+  };
+
+  // Handle onChange event of the duration input element
+  handleDurationInputChange = ev =>
+    this.setState({ duration: ev.currentTarget.value });
+
+  // Handle onChange event of the timing functions textarea
+  handleTextAreaChange = ev => {
+    // Parse a timing functions list from the text area into an array
+    const str = ev.currentTarget.value.split('\n');
+    this.setState({ timingFunctions: str });
   };
 
   toggleOpened = () =>
@@ -53,9 +71,30 @@ class TimingFunctionDemo extends React.Component {
     this.setState(state => ({ ...state, opened: !state.opened }));
 
   render() {
-    const { opened } = this.state;
+    const { duration, opened, timingFunctions } = this.state;
     return (
       <>
+        <div className="row">
+          <div className="col-12 col-sm-6 form-group">
+            <label for="durationInput">Duration</label>
+            <input
+              id="durationInput"
+              className="form-control"
+              style={{ textAlign: 'right' }}
+              value={duration}
+              onChange={this.handleDurationInputChange}
+            />
+          </div>
+          <div className="col-12 col-sm-6 form-group">
+            <label for="timingFunctionsInput">Timing functions</label>
+            <Textarea
+              id="timingFunctionsInput"
+              className="form-control"
+              value={timingFunctions.join('\n')}
+              onChange={this.handleTextAreaChange}
+            />
+          </div>
+        </div>
         <div className="row mb-3">
           <div className="col">
             <button
