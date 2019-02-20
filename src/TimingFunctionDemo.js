@@ -27,8 +27,8 @@ const Drawer = props => {
   };
   return (
     <div className="row">
-      <div className="col-12 col-md-2 d-flex">{timingFunction}</div>
-      <div className="col-12 col-md-10 d-flex mb-1">
+      <div className="col-12 col-md-3 d-flex text-left">{timingFunction}</div>
+      <div className="col-12 col-md-9 d-flex mb-1">
         <input
           type="text"
           className="drawer"
@@ -47,8 +47,13 @@ class TimingFunctionDemo extends React.Component {
     timingFunctions: [
       'linear',
       'ease',
+      'ease-in',
+      'ease-out',
       'ease-in-out',
-      'cubic-bezier(0.4, 1, 0.6, 5)'
+      'cubic-bezier(0.4, 1, 0.6, 5)',
+      'steps(5, jump-start)',
+      'step-start',
+      'step-end'
     ],
     duration: '4s'
   };
@@ -73,12 +78,12 @@ class TimingFunctionDemo extends React.Component {
   render() {
     const { duration, opened, timingFunctions } = this.state;
     return (
-      <>
+      <div className="mb-3">
         <div className="row">
           <div className="col-12 col-sm-6 form-group">
-            <label for="durationInput">Duration</label>
+            <label for="duration-input">Duration</label>
             <input
-              id="durationInput"
+              id="duration-input"
               className="form-control"
               style={{ textAlign: 'right' }}
               value={duration}
@@ -86,9 +91,9 @@ class TimingFunctionDemo extends React.Component {
             />
           </div>
           <div className="col-12 col-sm-6 form-group">
-            <label for="timingFunctionsInput">Timing functions</label>
+            <label for="timing-functions-input">Timing functions</label>
             <Textarea
-              id="timingFunctionsInput"
+              id="timing-functions-input"
               className="form-control"
               value={timingFunctions.join('\n')}
               onChange={this.handleTextAreaChange}
@@ -114,7 +119,7 @@ class TimingFunctionDemo extends React.Component {
             timingFunction={timingFunction}
           />
         ))}
-      </>
+      </div>
     );
   }
 }
