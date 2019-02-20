@@ -1,6 +1,5 @@
 # react-animations
-This project demonstrates various ways of doing animations in React:
- - CSS Transitions
+This project demonstrates CSS Transitions in React.
 
 To run this project in browser:
 1. `npm install`
