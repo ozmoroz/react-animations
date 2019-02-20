@@ -7,7 +7,7 @@ import './styles.css';
 
 function App() {
   return (
-    <div className="App container">
+    <div className="App container my-4">
       <h1>CSS Transitions in React</h1>
       <p>
         <i>
