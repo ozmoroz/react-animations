@@ -8,7 +8,7 @@ import './styles.css';
 function App() {
   return (
     <div className="App container my-4">
-      <h1>CSS Transitions in React</h1>
+      <h1>CSS Transitions</h1>
       <p>
         <i>
           Change the values in the boxes below and click Open/Close button to
